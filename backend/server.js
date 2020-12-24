@@ -8,6 +8,7 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const app = express();
 const User = require("./user");
+const Event = require("./event");
 const { v4: uuidv4 } = require("uuid");
 const path = require("path");
 const jwt = require("jsonwebtoken");
@@ -163,9 +164,47 @@ app.get("/api/confirmregistration/:token", async (req, res) => {
   });
 });
 app.get("/api/user", (req, res) => {
+  console.log(req.user);
   res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
 });
-//----------------------------------------- END OF ROUTES---------------------------------------------------
+
+app.get("/api/auth", (req, res) => {
+  console.log(req.user);
+  if (req.isAuthenticated()) {
+    res.send({
+      auth: "true",
+      user: req.user,
+    });
+  } else {
+    res.send({
+      auth: "false",
+    });
+  }
+});
+
+app.post("/api/:eventName/register", async (req, res) => {
+  console.log(req.params.eventName);
+  console.log(req.body);
+  let userIds = [];
+  for (var i = 0; i < req.body.email.length; i++) {
+    await User.findOne({ email: req.body.email[i] }, (err, user) => {
+      console.log(user);
+      if (err) throw err;
+      if (!user) {
+        res.send("One of the users is not registered");
+      }
+      if (user) {
+        userIds.push(user._id);
+      }
+
+      console.log(" loop ", userIds);
+    });
+  }
+  console.log("bahar", userIds);
+  res.send(userIds);
+});
+
+app; //----------------------------------------- END OF ROUTES---------------------------------------------------
 //Start Server
 app.listen(5000, () => {
   console.log("Server Has Started");

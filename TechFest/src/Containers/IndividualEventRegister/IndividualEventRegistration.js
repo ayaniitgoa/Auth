@@ -21,13 +21,20 @@ function IndividualEventRegistraion(props) {
   const onEmailSubmit = (e) => {
     e.preventDefault();
     console.log(email);
-    axios.post(
-      `http://localhost:5000/api/${eventname}/register`,
-      {
-        email,
-      },
-      { withCredentials: true }
-    );
+    axios
+      .post(
+        `http://localhost:5000/api/${eventname}/register`,
+        {
+          email,
+        },
+        { withCredentials: true }
+      )
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   // const [uuidArray, setUUIDArray] = useState([]);
