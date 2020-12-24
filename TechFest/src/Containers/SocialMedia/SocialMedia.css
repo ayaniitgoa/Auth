@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
+.social-media-box {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  font-family: "Raleway", sans-serif;
+}
+
+.social-left-section {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 20rem;
+}
+
+.social-icons {
+  color: white;
+  width: 15rem;
+  text-align: center;
+}
+
+.social-icons a i {
+  font-size: 30px;
+  margin: 0 10px;
+  color: white;
+}
+
+.copyright-info {
+  width: 22rem;
+  margin: 20px 20px;
+  font-size: 0.85rem;
+}

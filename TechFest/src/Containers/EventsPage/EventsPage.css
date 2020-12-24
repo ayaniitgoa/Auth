@@ -1,0 +1,180 @@
+.events-section {
+  width: 100vw !important;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  background: #6d296d;
+  background: linear-gradient(to top, #4f1d6b, #6d296d);
+  z-index: -3;
+  padding-bottom: 8rem;
+}
+.buttons {
+  margin-top: calc(1rem / var(--size-divisor));
+  padding-bottom: 5rem;
+}
+.events-title {
+  font-size: calc(3.5rem / var(--size-divisor));
+  text-align: left;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  top: 3rem;
+  bottom: 1.5rem;
+  color: white;
+  font-family: "Raleway", sans-serif;
+}
+.building {
+  width: 80vw;
+  position: absolute;
+  right: 0;
+  z-index: 0;
+  margin-top: 0;
+  transform: translate(25%);
+}
+
+.btn {
+  background-color: white;
+  text-align: center;
+  margin-bottom: calc(5rem / var(--size-divisor));
+  padding: calc(10px / var(--size-divisor));
+  font-size: calc(2rem / var(--size-divisor));
+  border-radius: calc(30px / var(--size-divisor));
+  flex-wrap: nowrap;
+  width: calc(30rem / var(--size-divisor));
+}
+
+.leftDiv {
+  margin-left: 3rem;
+  margin-top: 2rem;
+}
+
+.second {
+  margin-left: 11.5rem;
+}
+:root {
+  --size-divisor: 1;
+  --div-divisor: 1;
+}
+
+.event-div {
+  margin-top: calc(2.5rem / var(--size-divisor));
+  margin-top: 6rem;
+}
+
+.btn i {
+  margin-left: 10px !important;
+}
+
+.slide-div {
+  margin-left: 1rem;
+}
+.slick-prev:before {
+  font-size: calc(40px / var(--size-divisor));
+}
+
+.slick-next:before {
+  font-size: calc(40px / var(--size-divisor));
+}
+
+#grid-buttons {
+  width: calc(11rem / var(--size-divisor));
+  height: calc(8rem / var(--size-divisor));
+  font-size: calc(1.2rem / var(--size-divisor));
+  transform: translate(35%, 30%);
+}
+
+@media screen and (max-width: 1100px) {
+  :root {
+    --size-divisor: 1.5;
+    --div-divisor: 1.7;
+  }
+  .second {
+    margin-left: 3.5rem;
+  }
+  .event-div {
+    margin-left: 5rem;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .events-section {
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 761px) {
+  .leftDiv {
+    margin-left: 0.5rem;
+  }
+  .buttons {
+    padding-bottom: 0;
+    margin-left: 5vw;
+  }
+  .second {
+    width: 100%;
+    margin-left: 5vw;
+    padding-left: 2.2rem;
+    padding-top: 1.5rem;
+  }
+  .building {
+    width: 130vw;
+    margin-top: 7rem;
+  }
+  .event-div {
+    width: 100%;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 5vw;
+    padding-left: 1.8rem;
+    transform: translateY(-10%);
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .leftDiv {
+    margin-left: 0;
+  }
+  .events-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: 3.5rem;
+  }
+  .buttons {
+    padding-bottom: 0;
+    margin-left: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .event-div {
+    margin-top: 0;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .slide-div {
+    margin-left: 0;
+    padding-bottom: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .second {
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  #grid-buttons {
+    transform: translate(25%, 28%);
+  }
+}
+@media screen and (max-width: 380px) {
+  :root {
+    --size-divisor: 2;
+    --div-divisor: 2.6;
+  }
+  #grid-buttons {
+    transform: translate(15%, 28%);
+  }
+}

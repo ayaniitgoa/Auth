@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
+.contact-us-section {
+  width: 100vw;
+  font-family: "Raleway", sans-serif;
+  background: #0e5896;
+  background: linear-gradient(to bottom, #0e5896, #000000);
+  padding-top: 5rem;
+  position: relative;
+  z-index: 1;
+  margin-top: 0em;
+}
+
+.contact-us-title {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  font-family: "Raleway", sans-serif;
+}
+
+.contacts {
+  /* display: flex;
+  justify-content: space-around; */
+  width: 80vw;
+  margin: 0 auto;
+  /* flex-wrap: wrap; */
+  /* margin-top: 2rem; */
+  position: relative;
+  top: 3rem;
+}
+
+.contact-photo {
+  width: 12rem;
+  border-radius: 50%;
+  height: 12rem;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  /* position: relative;
+  left: 50%;
+  transform: translateX(-50%); */
+  z-index: 10;
+}
+
+.contact-text {
+  background-color: white;
+  text-align: center;
+  padding: 7px 9px;
+  border-radius: 30px;
+  width: 90%;
+  position: relative;
+  font-size: 1.1rem;
+
+  /* z-index: 1; */
+}
+.underwater-img-div {
+  width: 100%;
+  text-align: right;
+  position: relative;
+  z-index: -1;
+  width: 100vw;
+  /* right: -65px; */
+}
+
+.underwater-city {
+  width: 100vw;
+  margin-top: -50vh;
+  /* margin-right: -65px; */
+
+  position: relative;
+  /* right: -65px; */
+}
+
+.individual-contact {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.slick-next {
+  background: none !important;
+}
+
+@media only screen and (min-width: 2200px) {
+  .underwater-city {
+    /* width: 90vw; */
+    margin-top: -25vh;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .contact-text {
+    font-size: 0.9rem;
+  }
+
+  .contact-photo {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .underwater-city {
+    width: 100vw;
+    margin-top: -15vh;
+  }
+  .underwater-img-div {
+    text-align: center;
+  }
+
+  .contact-us-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-us-section {
+    margin-top: -1em;
+  }
+
+  .contact-text {
+    font-size: 0.7rem;
+  }
+}

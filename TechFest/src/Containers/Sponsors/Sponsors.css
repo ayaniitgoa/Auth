@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
+.sponsors-section {
+  width: 100vw;
+  height: 100%;
+  background-color: #0d0265;
+  position: relative;
+  padding-top: 0vh;
+  padding-bottom: 3rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.sponsors-title {
+  font-family: "Raleway", sans-serif;
+  position: relative;
+  font-size: 3rem;
+  text-align: left;
+  margin-left: 1.5em;
+  top: 5rem;
+  color: white;
+  z-index: 13;
+}
+
+.poseidon-img {
+  width: 25em;
+  position: relative;
+  left: -20px;
+  margin-top: -20vh;
+}
+
+.coming-soon-text {
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  font-size: 5rem;
+  text-align: center;
+  z-index: 13;
+}
+
+.bubble-img {
+  width: 10em;
+  /* position: relative; */
+  margin-top: 3vh;
+  position: relative;
+  z-index: 13;
+  /* display: none; */
+  opacity: 0;
+  pointer-events: none;
+}
+.bubble-img-1 {
+  position: relative;
+  left: 36vw;
+  top: 8vh;
+}
+.bubble-img-2 {
+  position: relative;
+  left: 45vw;
+  top: 15vh;
+}
+
+.bubble-img-3 {
+  position: relative;
+  left: 40vw;
+  top: 15vh;
+}
+.bubble-img-4 {
+  position: relative;
+  left: 50vw;
+  top: 23vh;
+}
+
+@media only screen and (max-width: 820px) {
+  .sponsors-section {
+    padding-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .sponsors-title {
+    text-align: center;
+    margin-left: 0;
+    font-size: 1.5rem;
+  }
+  .coming-soon-text {
+    font-size: 2.5rem;
+  }
+
+  .bubble-img {
+    width: 7em;
+  }
+
+  .poseidon-img {
+    width: 20em;
+    opacity: 0.5;
+  }
+
+  .bubble-col-1 {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 15vh;
+  }
+  .bubble-col-2 {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 20vh;
+  }
+
+  .bubble-img-1 {
+    position: relative;
+    left: 0vw;
+    top: 0;
+  }
+
+  .bubble-img-2 {
+    position: relative;
+    left: 0;
+    top: 0vh;
+  }
+  .bubble-img-3 {
+    position: relative;
+    left: 0vw;
+    top: 0;
+  }
+
+  .bubble-img-4 {
+    position: relative;
+    left: 0;
+    top: 0vh;
+  }
+}
+@media only screen and (min-width: 1650px) {
+  .bubble-img-1 {
+    position: relative;
+    left: 40vw;
+    top: 5vh;
+  }
+
+  .bubble-img-2 {
+    position: relative;
+    left: 50vw;
+    top: 10vh;
+  }
+  .bubble-img-3 {
+    position: relative;
+    left: 45vw;
+    top: 5vh;
+  }
+
+  .bubble-img-4 {
+    position: relative;
+    left: 55vw;
+    top: 10vh;
+  }
+}
+@media only screen and (min-width: 2200px) {
+  .bubble-img-1 {
+    position: relative;
+    left: 40vw;
+    top: 0vh;
+  }
+
+  .bubble-img-2 {
+    position: relative;
+    left: 50vw;
+    top: 5vh;
+  }
+  .bubble-img-3 {
+    position: relative;
+    left: 45vw;
+    top: 0vh;
+  }
+
+  .bubble-img-4 {
+    position: relative;
+    left: 55vw;
+    top: 5vh;
+  }
+}

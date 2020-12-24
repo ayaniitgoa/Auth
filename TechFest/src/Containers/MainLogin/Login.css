@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
+.login {
+  background: linear-gradient(to bottom, #85325f, #6d296d);
+  background: #6d296d;
+  font-family: "Raleway", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  display: flex;
+  
+  flex-direction: column;
+}
+.login >p {
+    color: white;
+    font-size: 32px;
+    top: 20px;
+  }
+
+  .login-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-info > input {
+      width: 60vw;
+      height: 70px;
+      border-radius: 49px;
+      outline-width: 0;
+      margin: 10px  0;
+      padding: 10px;
+      border: none;
+  }
+  
+ 
+  .sign-up{
+    margin: 10px 0;
+    background-color: white;
+    height: 60px;
+    width: 160px;
+    border-radius: 49px;
+    margin: 10px;
+    border: none;
+  }
+  .sign-up:focus {
+    outline: none;
+  }
+  .login-button{
+    margin: 10px 0;
+    background-color: white;
+    height: 60px;
+    width: 160px;
+    border-radius: 49px;
+    margin: 10px;
+    border: none;
+  }
+  .login-button:focus {
+    outline: none;
+  }
+
+  
+  .title{
+    margin: 10px;
+    text-align: center;
+  }
+  
+  @media only screen and (max-width: 650px){
+    .login-info > input {
+      width: 90vw;
+    }
+  }
