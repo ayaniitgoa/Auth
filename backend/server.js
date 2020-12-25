@@ -9,12 +9,14 @@ const bodyParser = require("body-parser");
 const app = express();
 const User = require("./user");
 const Event = require("./event");
+const Team = require("./team");
 const { v4: uuidv4 } = require("uuid");
 const path = require("path");
 const jwt = require("jsonwebtoken");
 const pug = require("pug");
 const nodemailer = require("nodemailer");
 const morgan = require("morgan");
+const { domainToASCII } = require("url");
 //----------------------------------------- END OF IMPORTS---------------------------------------------------
 mongoose.connect(
   "mongodb+srv://Ayan:1234ayan@contactkeeper.lc9s0.mongodb.net/AuthPassport?retryWrites=true&w=majority",
@@ -188,7 +190,6 @@ app.post("/api/:eventName/register", async (req, res) => {
   let userIds = [];
   for (var i = 0; i < req.body.email.length; i++) {
     await User.findOne({ email: req.body.email[i] }, (err, user) => {
-      console.log(user);
       if (err) throw err;
       if (!user) {
         res.send("One of the users is not registered");
@@ -196,12 +197,70 @@ app.post("/api/:eventName/register", async (req, res) => {
       if (user) {
         userIds.push(user._id);
       }
-
-      console.log(" loop ", userIds);
     });
   }
-  console.log("bahar", userIds);
-  res.send(userIds);
+
+  if (userIds.length > 0) {
+    // console.log("reached", userIds);
+    const options = { upsert: true, new: true, setDefaultsOnInsert: true };
+    const query = {
+      $set: {
+        name: req.params.eventName,
+      },
+    };
+
+    await Event.findOneAndUpdate(
+      { name: req.params.eventName },
+      options,
+      async (err, doc) => {
+        // console.log(doc);
+        if (err) throw err;
+        if (!doc) {
+          const newEvent = new Event({
+            name: req.params.eventName,
+            teams: [
+              {
+                participants: userIds,
+              },
+            ],
+          });
+          const d = await newEvent.save();
+          // console.log(d);
+          console.log("No event");
+          res.send("No event");
+        }
+        if (doc) {
+          // console.log("yoyoyo", doc);
+          const doc = await Event.findOne({ name: req.params.eventName });
+
+          for (var j = 0; j < doc.teams.length; j++) {
+            for (var k = 0; k < doc.teams[j].participants.length; k++) {
+              for (var m = 0; m < userIds.length; m++) {
+                console.log(doc.teams[j].participants[k], userIds[m]);
+                if (
+                  String(doc.teams[j].participants[k]) === String(userIds[m])
+                ) {
+                  console.log("nononono");
+                  res.send("One of the participants is already registered");
+                  return;
+                }
+              }
+            }
+          }
+
+          doc.teams.push({
+            participants: userIds,
+          });
+          const updated = await doc.save();
+          // console.log(updated);
+
+          res.send(doc);
+        }
+      }
+    );
+  }
+
+  // res.send(userIds);
 });
 
 app; //----------------------------------------- END OF ROUTES---------------------------------------------------
